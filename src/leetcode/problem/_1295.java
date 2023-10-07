@@ -39,7 +39,7 @@ Approach:
 
 package leetcode.problem;
 
-public class Problem1295 {
+public class _1295 {
     public static void main(String[] args) {
         // Input
         var nums = new int[] { 1, 21, 35, 6 };
