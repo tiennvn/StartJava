@@ -43,12 +43,20 @@ package leetcode.problem;
 
 public class _88 {
     public static void main(String[] args) {
-        
+        // Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+        var nums1 = new int[] { 1, 2, 3, 0, 0, 0 };
+        var m = 3;
+        var nums2 = new int[] { 2, 5, 6 };
+        var n = 3;
+        Solution.merge(nums1, m, nums2, n);
+        for (int i : nums1) {
+            System.out.print(i + "-");
+        }
     }
-}
 
-class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        
+    class Solution {
+        public static void merge(int[] nums1, int m, int[] nums2, int n) {
+            
+        }
     }
 }
