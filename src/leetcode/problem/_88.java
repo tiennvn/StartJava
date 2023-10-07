@@ -39,6 +39,14 @@ nums2.length == n
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 */
 
+/*
+Approach:
+- Loop on 2 array nums1 and nums2 from right to left (m and n index)
+- Loop on nums1 array, from right to left
+- Compare 2 value of current index of nums1 and nums2, and take greater value to result index on 
+- Loop until end of first index of array
+*/
+
 package leetcode.problem;
 
 public class _88 {
