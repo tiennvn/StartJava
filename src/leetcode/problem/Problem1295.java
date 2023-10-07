@@ -1,4 +1,6 @@
 /*
+1295. Find Numbers with Even Number of Digits
+
 Given an array nums of integers, return how many of them contain an even number of digits.
 
 Example 1:
@@ -45,27 +47,28 @@ public class Problem1295 {
         var result = Solution.findNumbers(nums);
         System.out.println("result = " + result);
     }
-}
 
-class Solution {
-    public static int findNumbers(int[] nums) {
-        int count = 0;
-        for (int num : nums) {
-            if (isEvenDigitNumber(num)) {
-                count++;
+    class Solution {
+        public static int findNumbers(int[] nums) {
+            int count = 0;
+            for (int num : nums) {
+                if (isEvenDigitNumber(num)) {
+                    count++;
+                }
             }
+            return count;
         }
-        return count;
+
+        public static boolean isEvenDigitNumber(int num) {
+            if ((num >= 10 && num <= 99)) {
+                return true;
+            } else if (num >= 1000 && num <= 9999) {
+                return true;
+            } else if (num == 100000) {
+                return true;
+            }
+            return false;
+        }
     }
 
-    public static boolean isEvenDigitNumber(int num) {
-        if ((num >= 10 && num <= 99)) {
-            return true;
-        } else if (num >= 1000 && num <= 9999) {
-            return true;
-        } else if (num == 100000) {
-            return true;
-        }
-        return false;
-    }
 }
