@@ -62,7 +62,8 @@ public class _27 {
     class Solution {
         public static int removeElement(int[] nums, int val) {
             int index = 0;
-            for (int i = 0; i < nums.length; i++) {
+            int len = nums.length;
+            for (int i = 0; i < len; i++) {
                 if (nums[i] != val) {
                     nums[index] = nums[i];
                     index++;
