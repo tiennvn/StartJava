@@ -32,26 +32,27 @@ public class Test3 {
         int start = 0;
         int len = 5;
         var result = f(input, start, len);
-        System.out.println("result: " + result);
 
-        if (result != null)
-        {
+        if (result != null) {
             for (int i = 0; i < result.length; i++) {
                 System.out.print(result[i] + "-");
             }
+        } else {
+            System.out.println("result: " + result);
         }
     }
 
-    public static char[] f(char[ ] a, int start, int len){
-       int length = a.length;
-       if (length - start < len) return null;
+    public static char[] f(char[] a, int start, int len) {
+        int length = a.length;
+        if (length - start < len)
+            return null;
 
-       char [] result = new char[len];
-       int j = 0;
-       for (int i = start; i < (start + len); i++, j++) {
+        char[] result = new char[len];
+        int j = 0;
+        for (int i = start; i < (start + len); i++, j++) {
             result[j] = a[i];
-       }
-       return result;
+        }
+        return result;
     }
 
 }

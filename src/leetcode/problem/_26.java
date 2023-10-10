@@ -50,23 +50,22 @@ package leetcode.problem;
 
 public class _26 {
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 1, 2, 2, 3, 5, 6, 6, 8};
+        int[] nums = new int[] { 1, 1, 2, 2, 3, 5, 6, 6, 8 };
         var result = Solution.removeDuplicates(nums);
         for (int i = 0; i < result; i++) {
             System.out.print(nums[i] + "-");
         }
     }
+
     class Solution {
         public static int removeDuplicates(int[] nums) {
             int len = nums.length;
-            if ( len < 2)
-            {
+            if (len < 2) {
                 return len;
             }
             int count = 1;
             for (int i = 1; i < nums.length; i++) {
-                if (nums[i] != nums[i-1])
-                {
+                if (nums[i] != nums[i - 1]) {
                     nums[count] = nums[i];
                     count++;
                 }
