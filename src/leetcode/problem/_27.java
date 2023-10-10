@@ -50,7 +50,7 @@ package leetcode.problem;
 
 public class _27 {
     public static void main(String[] args) {
-        int[] nums = new int[] { 3,2,2,3 };
+        int[] nums = new int[] { 3, 2, 2, 3 };
         int value = 3;
         int result = Solution.removeElement(nums, value);
 

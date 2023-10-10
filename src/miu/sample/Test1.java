@@ -21,32 +21,29 @@ public class Test1 {
         var result = f(input);
         System.out.println("result: " + result);
 
-         System.out.println(f(new int[]{1, 2, 3, 4}));
-         System.out.println(f(new int[]{4, 1, 2, 3}));
-         System.out.println(f(new int[]{1, 1, 2, 2}));
-         System.out.println(f(new int[]{1, 1}));
-         System.out.println(f(new int[]{1}));
-         System.out.println(f(new int[]{}));
+        System.out.println(f(new int[] { 1, 2, 3, 4 }));
+        System.out.println(f(new int[] { 4, 1, 2, 3 }));
+        System.out.println(f(new int[] { 1, 1, 2, 2 }));
+        System.out.println(f(new int[] { 1, 1 }));
+        System.out.println(f(new int[] { 1 }));
+        System.out.println(f(new int[] {}));
     }
 
-    public static int f(int[] a){
+    public static int f(int[] a) {
         int len = a.length;
-        if (len < 2) return -1;
+        if (len < 2)
+            return -1;
         int max1st = a[0];
         int max2nd = a[1];
-        if (max1st < max2nd)
-        {
+        if (max1st < max2nd) {
             max1st = a[0];
             max2nd = a[1];
         }
         for (int i = 2; i < len; i++) {
-            if (a[i] > max1st)
-            {
+            if (a[i] > max1st) {
                 max2nd = max1st;
                 max1st = a[i];
-            }
-            else if (a[i] != max1st && a[i] > max2nd)
-            {
+            } else if (a[i] != max1st && a[i] > max2nd) {
                 max2nd = a[i];
             }
         }

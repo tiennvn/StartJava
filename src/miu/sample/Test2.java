@@ -26,20 +26,22 @@ public class Test2 {
         var result = f(input);
         System.out.println("result: " + result);
 
-         System.out.println(f(new int[]{1, 2, 3, 4}));
-         System.out.println(f(new int[]{4, 1, 2, 3}));
-         System.out.println(f(new int[]{1, 1, 2, 2}));
-         System.out.println(f(new int[]{1, 1}));
-         System.out.println(f(new int[]{1}));
-         System.out.println(f(new int[]{}));
+        System.out.println(f(new int[] { 1, 2, 3, 4 }));
+        System.out.println(f(new int[] { 4, 1, 2, 3 }));
+        System.out.println(f(new int[] { 1, 1, 2, 2 }));
+        System.out.println(f(new int[] { 1, 1 }));
+        System.out.println(f(new int[] { 1 }));
+        System.out.println(f(new int[] {}));
     }
 
-    public static int f(int[] a){
+    public static int f(int[] a) {
         int sumOdd = 0;
         int sumEven = 0;
         for (int i = 0; i < a.length; i++) {
-            if (a[i]%2 == 1) sumOdd += a[i];
-            else sumEven += a[i];
+            if (a[i] % 2 == 1)
+                sumOdd += a[i];
+            else
+                sumEven += a[i];
         }
 
         return sumOdd - sumEven;
