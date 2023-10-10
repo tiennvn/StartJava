@@ -35,6 +35,9 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 package leetcode.problem;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class _1 {
     public static void main(String[] args) {
         var nums = new int[]{2,3,4,5};
@@ -49,13 +52,15 @@ public class _1 {
     }
     class Solution {
         public static int[] twoSum(int[] nums, int target) {
+            Map<Integer, Integer> map = new HashMap<>(); // <value, index>
             for (int i = 0; i < nums.length; i++) {
-                for (int j = i + 1; j < nums.length; j++) {
-                    if (nums[i] + nums[j] == target)
-                    {
-                        return new int[]{i, j};
-                    }
+                int expectValue = target - nums[i];
+                if (map.containsKey(expectValue))
+                {
+                    var expectValueIndex = map.get(expectValue);
+                    return new int[]{i, expectValueIndex};
                 }
+                map.put(nums[i], i);
             }
             return new int[]{};
         }
