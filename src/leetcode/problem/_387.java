@@ -1,3 +1,30 @@
+/*
+387. First Unique Character in a String
+Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+ 
+
+Example 1:
+
+Input: s = "leetcode"
+Output: 0
+Example 2:
+
+Input: s = "loveleetcode"
+Output: 2
+Example 3:
+
+Input: s = "aabb"
+Output: -1
+ 
+
+Constraints:
+
+1 <= s.length <= 105
+s consists of only lowercase English letters.
+
+ */
+
 package leetcode.problem;
 
 import java.util.HashMap;
@@ -14,21 +41,15 @@ public class _387 {
 
     class Solution {
         public static int firstUniqChar(String s) {
-            Set<Character> setCharacters = new HashSet<Character>();
-            for (int i = 0; i < s.length(); i++) {
-                char currentChar = s.charAt(i);
-                if (setCharacters.contains(currentChar))
-                {
-                    continue;
+            int ans = -1;
+            for (char c = 'a'; c <= 'z'; c++) {
+                int index = s.indexOf(c);
+                if (index != -1 && index == s.lastIndexOf(c)) {
+                    ans = Math.min(ans, index);
                 }
-                
-                if (s.lastIndexOf(currentChar) == i)
-                {
-                    return i;
-                }
-                setCharacters.add(currentChar);
             }
-            return -1;
+
+            return ans == Integer.MAX_VALUE ? -1 : ans;
         }
     }
 }
