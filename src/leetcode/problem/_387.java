@@ -14,29 +14,21 @@ public class _387 {
 
     class Solution {
         public static int firstUniqChar(String s) {
-            int result = -1;
-            int maxIndex = s.length() - 1;
             Set<Character> setCharacters = new HashSet<Character>();
-            for (int i = 0; i <= maxIndex; i++) {
+            for (int i = 0; i < s.length(); i++) {
                 char currentChar = s.charAt(i);
                 if (setCharacters.contains(currentChar))
                 {
                     continue;
                 }
                 
-                for (int j = maxIndex; j >= i; j--) {
-                    if (currentChar == s.charAt(j))
-                    {
-                        if (j == i)
-                        {
-                            return i;
-                        }
-                        setCharacters.add(currentChar);
-                        break;
-                    }
+                if (s.lastIndexOf(currentChar) == i)
+                {
+                    return i;
                 }
+                setCharacters.add(currentChar);
             }
-            return result;
+            return -1;
         }
     }
 }
